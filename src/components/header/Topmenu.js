@@ -23,6 +23,6 @@ function Topmenu ({title, text}) {
                 </ul>
             </div>
         </div>
-    )
+    );
 }
 export default Topmenu;

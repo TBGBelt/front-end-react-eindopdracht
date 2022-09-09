@@ -5,7 +5,7 @@ import {
     Route,
 } from 'react-router-dom';
 import Topmenu from './components/header/Topmenu';
-
+import Footer from "./components/footer/Footer";
 function App() {
     return (
         <Router>
@@ -21,7 +21,7 @@ function App() {
             {/*    <CalculatorPage/>*/}
             {/*    </Route>*/}
             {/*</Switch>*/}
-            {/*<Footer/>*/}
+            <Footer/>
         </Router>
     )
         ;
