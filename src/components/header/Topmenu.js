@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 // Topmenu component
 
-function Topmenu ({title, text}) {
+function Topmenu ({title, text1, text2, text3}) {
     return (
         <div className="topmenu__outer-container">
             <div className="topmenu__inner-container">
@@ -12,13 +12,13 @@ function Topmenu ({title, text}) {
                 </h3>
                 <ul className="navigation-list">
                     <li>
-                        <NavLink to="/" exact activeClassName="topmenu-navigation">{text}</NavLink>
+                        <NavLink to="/" exact activeClassName="topmenu-navigation">{text1}</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" exact activeClassName="topmenu-navigation">{text}</NavLink>
+                        <NavLink to="/" exact activeClassName="topmenu-navigation">{text2}</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/calculator" exact activeClassName="topmenu-navigation">{text}</NavLink>
+                        <NavLink to="/calculator" exact activeClassName="topmenu-navigation">{text3}</NavLink>
                     </li>
                 </ul>
             </div>
