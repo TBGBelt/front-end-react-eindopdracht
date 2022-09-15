@@ -5,43 +5,64 @@ import axios from "axios";
 const apiKey = "90f73244f33dbc5fc80f218800eedde6";
 const apiId = "c804ae75";
 
-function Searchbar({searchRecipe}) {
-    const [input, searchInput] = useState('')
+function Searchbar() {
+    const [input, setInput] = useState('');
+    const [mealtype, setMealtype] = useState("");
+    const [cuisine, setCuisine] = useState("");
+    const [diet, setDiet] = useState("");
+    const [time, setTime] = useState("");
+    const [recipes, setRecipes] = useState([]);
 
     function onFormSubmit(e) {
         e.preventDefault();
         console.log('submitted)')
-        searchRecipe(input);
+
+        fetchRecipe();
     }
 
-    // async function fetchRecipe() {
-    //     try {
-    //         const result = await axios.get("https://api.edamam.com/api/recipes/v2/", {
-    //             params: {
-    //                 type: "public",
-    //                 app_id: apiKey,
-    //                 app_key: apiKey,
-    //
-    //             }
-    //         })
-    //         console.log(result.data.recipe);
-    //     }catch (e) {
-    //         console.error(e)
-    //     }
-    // } fetchRecipe();
+    async function fetchRecipe() {
+        try {
+            const result = await axios.get("https://api.edamam.com/api/recipes/v2", {
+                params: {
+                    type: "public",
+                    app_id: apiId,
+                    app_key: apiKey,
+                    q: input,
+                    mealType: mealtype ? mealtype : null,
+                    cuisineType: cuisine ? cuisine : null,
+                    diet: diet ? diet : null,
+                    time: time ? time : null,
+                }
+            })
+            console.log(result.data.hits);
 
-    return  (
+
+            const resultAmount = result.data.hits.slice(0, 5);
+            setRecipes(result.data.hits.slice(0, 5));
+            console.log(resultAmount);
+            console.log(recipes);
+
+        } catch (e) {
+            console.error(e)
+        }
+    }
+
+
+    return (
         <form className="searchbar" onSubmit={onFormSubmit}>
             <input
                 type="text"
-            name="search"
-            value={input}
-            onChange={(e) => searchInput(e.target.value)}
+                name="search"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
                 placeholder="zoek een recept"
             />
 
-            <select>
-                <option value="" disabled selected>Meal type</option>
+            <select
+                value={mealtype}
+                onChange={(e) => setMealtype(e.target.value)}
+            >
+                <option value="" defaultValue={mealtype}>Meal type</option>
                 <option value="breakfast">Breakfast</option>
                 <option value="lunch">Lunch</option>
                 <option value="brunch">Brunch</option>
@@ -50,8 +71,11 @@ function Searchbar({searchRecipe}) {
                 <option value="teatime">Tea Time</option>
             </select>
 
-            <select>
-                <option value="" disabled selected>Cuisine</option>
+            <select
+                value={cuisine}
+                onChange={(e) => setCuisine(e.target.value)}
+            >
+                <option value="" defaultValue={cuisine}>Cuisine</option>
                 <option value="american">American</option>
                 <option value="asian">Asian</option>
                 <option value="british">British</option>
@@ -72,8 +96,11 @@ function Searchbar({searchRecipe}) {
                 <option value="south east asia">Soath East Asia</option>
             </select>
 
-            <select>
-                <option value="" disabled selected>Diet</option>
+            <select
+                value={diet}
+                onChange={(e) => setDiet(e.target.value)}
+            >
+                <option value="" defaultValue={diet}>Diet</option>
                 <option value="balanced">Balanced</option>
                 <option value="high-fiber">High-fiber</option>
                 <option value="high-protein">High-protein</option>
@@ -82,17 +109,34 @@ function Searchbar({searchRecipe}) {
                 <option value="low-sodium">Low-sodium</option>
             </select>
 
-            <select>
-                <option value="" disabled selected>Time</option>
+            <select
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+            >
+                <option value="" defaultValue={time}>Time</option>
                 <option value="0-15">0 - 15 min</option>
                 <option value="15-30">15 - 30 min</option>
                 <option value="30-60">30 - 60 min</option>
                 <option value="60%2B">60 min or longer</option>
             </select>
+
             <button type="submit">
                 Zoeken
             </button>
+
+            <div>
+                {recipes.map((recipe) => (
+                    <div key={recipe.recipe.label}>
+                    <h3 >{recipe.recipe.label}</h3>
+                     <img src={recipe.recipe.image}/>
+                        <p>{recipe.recipe.calories}</p>
+                    </div>
+                    ))}
+            </div>
+
         </form>
+
+
     );
 }
 

@@ -1,5 +1,4 @@
 import './App.css';
-import axios from "axios";
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,28 +14,9 @@ import {ReactComponent as Twitter} from "./assets/icons/twitter.svg";
 
 
 
-const apiKey = "90f73244f33dbc5fc80f218800eedde6";
-const apiId = "c804ae75";
-
-
-
 function App() {
 
-    // async function fetchRecipe() {
-    //     try {
-    //         const result = await axios.get("https://api.edamam.com/api/recipes/v2/", {
-    //             params: {
-    //                 type: "public",
-    //                 app_id: apiKey,
-    //                 app_key: apiKey,
-    //
-    //             }
-    //         })
-    //         console.log(result.data.recipe);
-    //     }catch (e) {
-    //         console.error(e)
-    //     }
-    // } fetchRecipe();
+
 
     return (
         <Router>
