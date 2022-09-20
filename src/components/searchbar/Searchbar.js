@@ -1,6 +1,8 @@
 import React from "react";
 import {useState} from "react";
 import axios from "axios";
+import './Searchbar.css'
+// import { ReactComponent as Time } from ".src/assets/icons/time.svg";
 
 const apiKey = "90f73244f33dbc5fc80f218800eedde6";
 const apiId = "c804ae75";
@@ -15,7 +17,6 @@ function Searchbar() {
 
     function onFormSubmit(e) {
         e.preventDefault();
-        console.log('submitted)')
 
         fetchRecipe();
     }
@@ -37,8 +38,9 @@ function Searchbar() {
             console.log(result.data.hits);
 
 
-            const resultAmount = result.data.hits.slice(0, 5);
-            setRecipes(result.data.hits.slice(0, 5));
+            const resultAmount = result.data.hits.slice(0, 12);
+
+            setRecipes(result.data.hits.slice(0, 12));
             console.log(resultAmount);
             console.log(recipes);
 
@@ -124,16 +126,20 @@ function Searchbar() {
                 Zoeken
             </button>
 
-            <div>
+
+            <div className="recipe-card__outer-container">
+            <div className="recipe-card">
                 {recipes.map((recipe) => (
                     <div key={recipe.recipe.label}>
-                    <h3 >{recipe.recipe.label}</h3>
+                    <h3 className="recipe-card__title" >{recipe.recipe.label}</h3>
                      <img src={recipe.recipe.image}/>
-                        <p>{recipe.recipe.calories}</p>
+                        <p> {recipe.recipe.ingredients.length} ingredients | {Math.round(recipe.recipe.calories)} calories</p>
+                        <p>{recipe.recipe.totalTime} min</p>
+                        {/*<img src={Time} alt="clock"/>*/}
                     </div>
                     ))}
             </div>
-
+            </div>
         </form>
 
 

@@ -1,7 +1,6 @@
 import React from "react";
-import axios from "axios";
-import Topmenu from "../../components/header/Topmenu";
-import Footer from "../../components/footer/Footer";
+import './Homepage.css'
+// import background from './assets/images/hero-image.jpg';
 
 
 //homepage overview

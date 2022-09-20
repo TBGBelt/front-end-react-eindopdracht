@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --color1: #283E53;
+    --color2: #71B6BE;
+    --color3: #EEEEEE;
+    --color4: #FFFFFF;
+    --color5: #C0C0C0;
+    --color6: #e1e1e1;
+}
+ body {
+     font-family: Poppins, sans-serif;
+ }
+.topmenu__outer-container {
+    background-color: var(--color1);
+}
+
+.navigation-list {
+    color: var(--color3);
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.topmenu-navigation {
+    text-decoration: none;
+    color: var(--color3);
+    list-style-type: none;
+}
+
+
+.homepage-logo {
+    font-family: Austein, Serif;
+    font-size: 30px;
+    color: var(--color2);
+    text-decoration: none;
+    text-transform: capitalize;
+    list-style-type: none;
+}
