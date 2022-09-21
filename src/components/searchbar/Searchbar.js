@@ -3,6 +3,7 @@ import {useState} from "react";
 import axios from "axios";
 import './Searchbar.css'
 // import { ReactComponent as Time } from ".src/assets/icons/time.svg";
+import Recipecard from "../recipecard/Recipecard";
 
 const apiKey = "90f73244f33dbc5fc80f218800eedde6";
 const apiId = "c804ae75";
@@ -127,23 +128,37 @@ function Searchbar() {
             </button>
 
 
-            <div className="recipe-card__outer-container">
-            <div className="recipe-card">
                 {recipes.map((recipe) => (
-                    <div key={recipe.recipe.label}>
-                    <h3 className="recipe-card__title" >{recipe.recipe.label}</h3>
-                     <img src={recipe.recipe.image}/>
-                        <p> {recipe.recipe.ingredients.length} ingredients | {Math.round(recipe.recipe.calories)} calories</p>
-                        <p>{recipe.recipe.totalTime} min</p>
-                        {/*<img src={Time} alt="clock"/>*/}
-                    </div>
-                    ))}
-            </div>
-            </div>
+            <Recipecard
+                key={recipe.recipe.label}
+                setRecipesHandler={setRecipes}
+                picture={recipe.recipe.image}
+                recipeName={recipe.recipe.label}
+                ingredients={recipe.recipe.ingredients.length}
+                calories={Math.round(recipe.recipe.calories)}
+                time={recipe.recipe.totalTime}
+            />))}
+            
+
         </form>
 
 
     );
 }
 
-export default Searchbar
+export default Searchbar;
+
+// <div className="recipe-card__outer-container">
+//     <div className="recipe-card">
+//         {recipes.map((recipe) => (
+//             <div key={recipe.recipe.label}>
+//                 <img src={recipe.recipe.image}/>
+//                 <h3 className="recipe-card__title">{recipe.recipe.label}</h3>
+//                 <p> {recipe.recipe.ingredients.length} ingredients
+//                     | {Math.round(recipe.recipe.calories)} calories</p>
+//                 <p>{recipe.recipe.totalTime} min</p>
+//                 {/*<img src={Time} alt="clock"/>*/}
+//             </div>
+//         ))}
+//     </div>
+// </div>

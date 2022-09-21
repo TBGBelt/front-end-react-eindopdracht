@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --color1: #283E53;
+    --color2: #71B6BE;
+    --color3: #EEEEEE;
+    --color4: #FFFFFF;
+    --color5: #C0C0C0;
+    --color6: #e1e1e1;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background-color: var(--color3);
+}
+
+.recipe-card__outer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    align-self: center;
+    gap: 20px 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.recipe-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    position: relative;
+    text-decoration: none;
+}
+
+.recipe-card > img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 3px 3px 0 0;
+}
+
+.recipe-card__title{
+    padding: 10px 10px 10px 10px;
+    background-color: #eeeeee;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 5px 10px -5px #C0C0C0;
+    border-radius: 0 0 5px 5px;
+}
