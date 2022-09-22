@@ -4,6 +4,9 @@ import axios from "axios";
 import './Searchbar.css'
 // import { ReactComponent as Time } from ".src/assets/icons/time.svg";
 import Recipecard from "../recipecard/Recipecard";
+import Button from "../button/Button";
+import Inputfield from "../inputfield/Inputfield";
+import Singleselect from "../multiselect/Singleselect";
 
 const apiKey = "90f73244f33dbc5fc80f218800eedde6";
 const apiId = "c804ae75";
@@ -53,15 +56,15 @@ function Searchbar() {
 
     return (
         <form className="searchbar" onSubmit={onFormSubmit}>
-            <input
+
+            <Inputfield
                 type="text"
                 name="search"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="zoek een recept"
             />
-
-            <select
+            <Singleselect
                 value={mealtype}
                 onChange={(e) => setMealtype(e.target.value)}
             >
@@ -72,9 +75,9 @@ function Searchbar() {
                 <option value="dinner">Dinner</option>
                 <option value="snack">Snack</option>
                 <option value="teatime">Tea Time</option>
-            </select>
+            </Singleselect>
 
-            <select
+            <Singleselect
                 value={cuisine}
                 onChange={(e) => setCuisine(e.target.value)}
             >
@@ -97,9 +100,9 @@ function Searchbar() {
                 <option value="nordic">Nordic</option>
                 <option value="south american">South American</option>
                 <option value="south east asia">Soath East Asia</option>
-            </select>
+            </Singleselect>
 
-            <select
+            <Singleselect
                 value={diet}
                 onChange={(e) => setDiet(e.target.value)}
             >
@@ -110,9 +113,9 @@ function Searchbar() {
                 <option value="low-carb">Low-carb</option>
                 <option value="low-fat">Low-fat</option>
                 <option value="low-sodium">Low-sodium</option>
-            </select>
+            </Singleselect>
 
-            <select
+            <Singleselect
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
             >
@@ -121,11 +124,11 @@ function Searchbar() {
                 <option value="15-30">15 - 30 min</option>
                 <option value="30-60">30 - 60 min</option>
                 <option value="60%2B">60 min or longer</option>
-            </select>
+            </Singleselect>
 
-            <button type="submit">
-                Zoeken
-            </button>
+            <Button
+            buttonText='Zoek recept'
+            />
 
 
                 {recipes.map((recipe) => (
@@ -138,6 +141,7 @@ function Searchbar() {
                 calories={Math.round(recipe.recipe.calories)}
                 time={recipe.recipe.totalTime}
             />))}
+
             
 
         </form>

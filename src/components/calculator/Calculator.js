@@ -1,6 +1,8 @@
 import React from "react";
 import {useState} from "react";
 import axios from "axios";
+import Button from "../button/Button";
+import Inputfield from "../inputfield/Inputfield";
 
 const apiKey = "58ec23312b4a3e36553f8c0dafcbd892";
 const apiID = "931dac1a";
@@ -25,9 +27,8 @@ function Calculator() {
 
                 }
             })
-
             console.log(result.data);
-            setIngredient(result.data.parsed[0].food);
+            setIngredient(result.data.parsed[0]);
 
         } catch (e) {
             console.error(e)
@@ -39,7 +40,7 @@ function Calculator() {
 
             <h1>Food calculator</h1>
 
-            <input
+            <Inputfield
                 type="text"
                 name="find ingredient"
                 value={input}
@@ -47,17 +48,17 @@ function Calculator() {
                 placeholder="zoek ingredient"
             />
 
-            <button type="submit">
-                Zoeken
-            </button>
+            <Button type="submit"
+                buttonText="Zoek ingredient"
+            />
 
-            <div className="calculator-result">
-                {ingredient.map ((result) => (
-                    <div key={result.data.parsed[0].food}>
-                        <p>{result.data.parsed[0].food.label}</p>
-                    </div>
-                ))}
-            </div>
+            {/*<div className="calculator-result">*/}
+            {/*    {ingredient.map ((result) => (*/}
+            {/*        <div key={result.data.parsed[0]}>*/}
+            {/*            <p>{result.data.parsed[0].food.label}</p>*/}
+            {/*        </div>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
         </form>
 
     );
