@@ -38,22 +38,7 @@ function App() {
                 <Calculator/>
                 </Route>
             </Switch>
-            <Footer
-            footerTitle="about"
-            footerText="Lorem Ipsum"
-            />
-            <Footer
-            footerTitle="info"
-            footerText="Lorem Ipsum"
-            />
-            <Footer
-            footerTitle="socials"
-            />
-            <Facebook/>
-            <LinkedIn/>
-            <Twitter/>
-
-
+            <Footer/>
         </Router>
     )
         ;

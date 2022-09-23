@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import axios from "axios";
-import './Searchbar.css'
+import styles from './Searchbar.module.css'
 // import { ReactComponent as Time } from ".src/assets/icons/time.svg";
 import Recipecard from "../recipecard/Recipecard";
 import Button from "../button/Button";
@@ -55,7 +55,7 @@ function Searchbar() {
 
 
     return (
-        <form className="searchbar" onSubmit={onFormSubmit}>
+        <form className={styles.searchbar} onSubmit={onFormSubmit}>
 
             <Inputfield
                 type="text"

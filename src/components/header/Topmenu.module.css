@@ -1,0 +1,85 @@
+/*!*---------------global styles-----------------*!*/
+
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');*/
+
+/** {*/
+/*    box-sizing: border-box;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+/*:root {*/
+/*    --color1: #283E53;*/
+/*    --color2: #71B6BE;*/
+/*    --color3: #EEEEEE;*/
+/*    --color4: #FFFFFF;*/
+/*    --color5: #C0C0C0;*/
+/*    --color6: #e1e1e1;*/
+/*}*/
+
+/*-------------------typography----------------*/
+
+ /*body {*/
+ /*    font-family: Poppins, sans-serif;*/
+ /*}*/
+
+.homepage-logo {
+    font-family: Austein, serif;
+    font-size: 30px;
+    color: var(--color1);
+    text-decoration: none;
+    text-transform: capitalize;
+    list-style-type: none;
+}
+
+.topmenu__outer-container {
+    background-color: var(--color4);
+    border: 1px solid red;
+}
+
+
+.navigation-list li a {
+    color: var(--color1);
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+/*-----------layout-------------*/
+
+.topmenu__outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+}
+
+.topmenu__inner-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: 60px;
+    width: 100%;
+}
+
+.homepage-logo {
+    flex-basis: 50%;
+}
+
+.navigation-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-basis: 80%;
+    margin-right: 80px;
+}
+
+.navigation-list li a {
+    margin-left: 50px;
+}
+
