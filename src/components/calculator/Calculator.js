@@ -3,13 +3,15 @@ import {useState} from "react";
 import axios from "axios";
 import Button from "../button/Button";
 import Inputfield from "../inputfield/Inputfield";
+import Calculatorresult from "./Calculatorresult";
 
 const apiKey = "58ec23312b4a3e36553f8c0dafcbd892";
 const apiID = "931dac1a";
 
 function Calculator() {
-    const [input, setInput] = useState('');
-    const [ingredient, setIngredient] = useState([]);
+    // const [input, setInput] = useState('')
+    const [ingredient, setIngredient] = useState('');
+
 
     function onFormSubmit(e) {
         e.preventDefault();
@@ -27,15 +29,19 @@ function Calculator() {
 
                 }
             })
-            console.log(result.data);
-            setIngredient(result.data.parsed[0]);
+            // console.log(result.data.parsed);
+            const ingredientResult = result.data.hints[0];
+            console.log(ingredientResult);
+            setIngredient(result.data.hints[0]);
+            console.log(setIngredient);
 
         } catch (e) {
-            console.error(e)
+            console.error(e);
         }
     }
 
     return (
+        <div>
         <form className="ingredientSearch" onSubmit={onFormSubmit}>
 
             <h1>Food calculator</h1>
@@ -43,27 +49,28 @@ function Calculator() {
             <Inputfield
                 type="text"
                 name="find ingredient"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
+                value={ingredient}
+                onChange={(e) => setIngredient(e.target.value)}
                 placeholder="zoek ingredient"
             />
 
             <Button type="submit"
-                buttonText="Zoek ingredient"
+                    buttonText="Zoek ingredient"
             />
 
-            {/*<div className="calculator-result">*/}
-            {/*    {ingredient.map ((result) => (*/}
-            {/*        <div key={result.data.parsed[0]}>*/}
-            {/*            <p>{result.data.parsed[0].food.label}</p>*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
         </form>
 
-    );
+
+        <Calculatorresult
+            // key={setIngredient}
+            // setIngredientHandler={setIngredient}
+            // ingredientName={result.data.hints[0].food.label}
+
+        />
+    </div>
+    )  ;
 
 
 }
 
-export default Calculator
+export default Calculator;

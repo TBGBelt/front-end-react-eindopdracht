@@ -1,5 +1,5 @@
 import React from "react";
-// import { ReactComponent as Time } from ".src/assets/icons/time.svg";
+import { ReactComponent as Time } from "../../assets/icons/time.svg";
 import styles from './Recipecard.module.css'
 
 function Recipecard ({picture, recipeName, ingredients, calories, time}) {
@@ -11,7 +11,7 @@ function Recipecard ({picture, recipeName, ingredients, calories, time}) {
                 <img src={picture}/>
                 <h3 className={styles["recipe-card__title"]}>{recipeName}</h3>
                 <p>{ingredients} ingredients | {calories} calories</p>
-                <p>{time} min </p>
+                <p>{time} min <img src={Time}/> </p>
             </div>
         </div>
     );
