@@ -10,8 +10,8 @@ function Recipecard ({picture, recipeName, ingredients, calories, time}) {
             <div className={styles["recipe-card"]}>
                 <img src={picture}/>
                 <h3 className={styles["recipe-card__title"]}>{recipeName}</h3>
-                <p>{ingredients} ingredients | {calories} calories</p>
-                <p>{time} min <img src={Time}/> </p>
+                <p className={styles["recipe-card__ingredients-calories"]}>{ingredients} ingredients | {calories} calories</p>
+                <p className={styles["recipe-card__time"]}>{time} min <img src={Time}/> </p>
             </div>
         </div>
     );
