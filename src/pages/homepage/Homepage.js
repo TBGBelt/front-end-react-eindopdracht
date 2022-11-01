@@ -10,6 +10,7 @@ import recipeImage from "../../assets/images/recipe1.jpg"
 function Homepage() {
 
     return (
+        <div>
         <div className={styles["hero__outer-container"]}>
             <div className={styles["hero__inner-container"]}>
                 <h1 className={styles["homepage-title"]}>delicious recipes</h1>
@@ -18,35 +19,38 @@ function Homepage() {
                     buttonText="find recipes"
                 />
             </div>
-            {/*<div className={styles["feature-recipes"]}>*/}
-            {/*    <div className={styles["feature-recipes__card"]}>*/}
-            {/*        <Recipecard*/}
-            {/*            picture={recipeImage}*/}
-            {/*            recipeName="feature recipes"*/}
-            {/*            ingredients="10"*/}
-            {/*            calories="260"*/}
-            {/*            time="10"*/}
-            {/*        />*/}
-            {/*    </div>*/}
-            {/*    <div className={styles["feature-recipes__card"]}>*/}
-            {/*        <Recipecard*/}
-            {/*            picture={recipeImage}*/}
-            {/*            recipeName="feature recipes"*/}
-            {/*            ingredients="10"*/}
-            {/*            calories="260"*/}
-            {/*            time="10"*/}
-            {/*        />*/}
-            {/*    </div>*/}
-            {/*    <div className={styles["feature-recipes__card"]}>*/}
-            {/*        <Recipecard*/}
-            {/*            picture={recipeImage}*/}
-            {/*            recipeName="feature recipes"*/}
-            {/*            ingredients="10"*/}
-            {/*            calories="260"*/}
-            {/*            time="10"*/}
-            {/*        />*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+        </div>
+        <div className={styles["header__feature-recipes"]}>
+            <div className={styles["feature-recipes"]}>
+                <div className={styles["feature-recipes__card"]}>
+                    <Recipecard
+                        picture={recipeImage}
+                        recipeName="feature recipes"
+                        ingredients="10"
+                        calories="260"
+                        time="10"
+                    />
+                </div>
+                <div className={styles["feature-recipes__card"]}>
+                    <Recipecard
+                        picture={recipeImage}
+                        recipeName="feature recipes"
+                        ingredients="10"
+                        calories="260"
+                        time="10"
+                    />
+                </div>
+                <div className={styles["feature-recipes__card"]}>
+                    <Recipecard
+                        picture={recipeImage}
+                        recipeName="feature recipes"
+                        ingredients="10"
+                        calories="260"
+                        time="10"
+                    />
+                </div>
+            </div>
+        </div>
         </div>
     );
 }

@@ -4,22 +4,22 @@ import styles from './Topmenu.module.css'
 
 // Topmenu component
 
-function Topmenu ({title, text1, text2, text3}) {
+function Topmenu () {
     return (
         <div className={styles["topmenu__outer-container"]}>
             <div className={styles["topmenu__inner-container"]}>
                 <h3>
-                    <NavLink to="/" exact activeClassName={styles["homepage-logo"]}>{title}</NavLink>
+                    <NavLink to="/" exact activeClassName={styles["homepage-logo"]}>The Clueless Cook</NavLink>
                 </h3>
                 <ul className={styles["navigation-list"]}>
                     <li>
-                        <NavLink to="/" exact activeClassName={styles["topmenu-navigation"]}>{text1}</NavLink>
+                        <NavLink to="/" exact activeClassName={styles["topmenu-navigation"]}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" exact activeClassName={styles["topmenu-navigation"]}>{text2}</NavLink>
+                        <NavLink to="/" activeClassName={styles["topmenu-navigation"]}>About</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/calculator" exact activeClassName={styles["topmenu-navigation"]}>{text3}</NavLink>
+                        <NavLink to="/calculator" activeClassName={styles["topmenu-navigation"]}>Calculator</NavLink>
                     </li>
                 </ul>
             </div>

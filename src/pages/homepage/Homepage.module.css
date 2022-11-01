@@ -1,4 +1,5 @@
 .hero__outer-container {
+    /*border: 1px solid greenyellow;*/
     background-image: url("../../assets/images/hero-image.jpg");
     background-size: cover;
     flex-basis: 600px;
@@ -10,6 +11,7 @@
 }
 
 .hero__inner-container {
+    /*border: 1px solid red;*/
     min-width: 800px;
     align-self: center;
     margin-right: 12%;
@@ -29,6 +31,13 @@
     font-weight: 400;
 }
 
+.header__featured-recipes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+}
+
 .feature-recipes {
     display: flex;
     flex-direction: row;
@@ -45,6 +54,13 @@
     position: relative;
     top: -15px;
     z-index: 1;
-    height: 175px;
+    height: 45%;
+
 }
 
+.featured-recipes__card > img{
+    height: 12px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px 3px 0 0;
+}

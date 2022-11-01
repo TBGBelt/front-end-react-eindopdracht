@@ -9,9 +9,8 @@ import Footer from "./components/footer/Footer";
 import Searchbar from "./components/searchbar/Searchbar";
 import Homepage from "./pages/homepage/Homepage";
 import Calculator from "./components/calculator/Calculator";
-import {ReactComponent as Facebook} from "./assets/icons/facebook.svg";
-import {ReactComponent as LinkedIn} from "./assets/icons/linkedin.svg";
-import {ReactComponent as Twitter} from "./assets/icons/twitter.svg";
+import Recipepage from "./pages/recipe/Recipepage";
+
 
 
 
@@ -21,21 +20,18 @@ function App() {
 
     return (
         <Router>
-            <Topmenu
-            title="The Clueless Cook"
-            text1="home"
-            text2="about"
-            text3="calculator"/>
+            <Topmenu/>
+
             <Switch>
                 <Route exact path="/">
-                <Homepage/>
-            <Searchbar/>
+                    <Homepage/>
+                    <Searchbar/>
                 </Route>
-                {/*<Route exact path="">*/}
-                {/*<Recipepage/>*/}
-                {/*</Route>*/}
+                <Route exact path="/recipe/:recipeID">
+                    <Recipepage/>
+                </Route>
                 <Route exact path="/calculator">
-                <Calculator/>
+                    <Calculator/>
                 </Route>
             </Switch>
             <Footer/>

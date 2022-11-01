@@ -1,18 +1,27 @@
 import React from "react";
-import { ReactComponent as Time } from "../../assets/icons/time.svg";
+import {ReactComponent as Time} from "../../assets/icons/time.svg";
 import styles from './Recipecard.module.css'
+import {NavLink} from "react-router-dom"
 
-function Recipecard ({picture, recipeName, ingredients, calories, time}) {
+function Recipecard({picture, recipeName, ingredients, calories, time, recipeID}) {
 
 
     return (
         <div className={styles["recipe-card__outer-container"]}>
             <div className={styles["recipe-card"]}>
-                <img src={picture}/>
-                <h3 className={styles["recipe-card__title"]}>{recipeName}</h3>
-                <p className={styles["recipe-card__ingredients-calories"]}>{ingredients} ingredients | {calories} calories</p>
-                <p className={styles["recipe-card__time"]}>{time} min <img src={Time}/> </p>
+                {/*<a className={styles["recipe-link"]} href={recipeID}>*/}
+                <NavLink to="/recipe/:recipeID" activeClassName={styles["recipe-link"]}  >
+                    <img src={picture} alt="recipe-picture"/>
+                    <div className={styles["recipe-card__title"]}>
+                        <h5>{recipeName}</h5>
+                        <p className={styles["recipe-card__ingredients-calories"]}>{ingredients} ingredients
+                            | {calories} calories</p>
+                        <p className={styles["recipe-card__time"]}>{time} min <img src={Time} alt="clock"/></p>
+                    </div>
+                </NavLink>
+                {/*</a>*/}
             </div>
+
         </div>
     );
 }
