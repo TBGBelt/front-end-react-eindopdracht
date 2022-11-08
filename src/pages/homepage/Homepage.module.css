@@ -1,5 +1,15 @@
+/*.outer-container {*/
+/*    !*border: 1px solid red;*!*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 100%*/
+/*}*/
+
+
 .hero__outer-container {
-    /*border: 1px solid greenyellow;*/
+    /*border: 1px solid hotpink;*/
     background-image: url("../../assets/images/hero-image.jpg");
     background-size: cover;
     flex-basis: 600px;
@@ -12,9 +22,10 @@
 
 .hero__inner-container {
     /*border: 1px solid red;*/
-    min-width: 800px;
+    min-width: 200px;
     align-self: center;
     margin-right: 12%;
+    margin-top: 12%;
 }
 
 .homepage-title {
@@ -31,11 +42,13 @@
     font-weight: 400;
 }
 
-.header__featured-recipes {
+.header__feature-recipes {
+    border: 1px solid red;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 20px 0 20px 0;
+    align-items: center;
 }
 
 .feature-recipes {
@@ -58,9 +71,11 @@
 
 }
 
-.featured-recipes__card > img{
+Herorecipe > img {
     height: 12px;
-    width: 100%;
+    width: 50%;
     object-fit: cover;
     border-radius: 3px 3px 0 0;
 }
+
+

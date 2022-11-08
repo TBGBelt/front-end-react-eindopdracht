@@ -1,16 +1,17 @@
 import React from "react";
 import Time from "../../assets/icons/time.svg";
-import styles from './Recipecard.module.css'
+import styles from './Herorecipe.module.css'
 import {NavLink} from "react-router-dom"
+import recipeImage from "../../assets/images/recipe1.jpg"
 
-function Recipecard({picture, recipeName, ingredients, calories, time, recipeID}) {
+function Herorecipe ({recipeName, ingredients, calories, time, recipeID}) {
 
 
     return (
         <div className={styles["recipe-card__outer-container"]}>
             <div className={styles["recipe-card"]}>
                 <NavLink to={`/recipe/:${recipeID}`} activeClassName={styles["recipe-link"]}>
-                    <img src={picture} alt="recipe-picture"/>
+                    <img src={recipeImage} alt="recipe-picture" className={styles["recipe-image"]}/>
                     <div className={styles["recipe-card__title"]}>
                         <h5>{recipeName}</h5>
                         <p className={styles["recipe-card__ingredients-calories"]}>{ingredients} ingredients
@@ -24,4 +25,4 @@ function Recipecard({picture, recipeName, ingredients, calories, time, recipeID}
     );
 }
 
-export default Recipecard;
+export default Herorecipe;

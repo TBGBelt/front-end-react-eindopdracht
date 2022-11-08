@@ -25,12 +25,11 @@ function App() {
             <Switch>
                 <Route exact path="/">
                     <Homepage/>
-                    <Searchbar/>
                 </Route>
-                <Route exact path="/recipe/:recipeID">
+                <Route path="/recipe/:recipeID">
                     <Recipepage/>
                 </Route>
-                <Route exact path="/calculator">
+                <Route path="/calculator">
                     <Calculator/>
                 </Route>
             </Switch>

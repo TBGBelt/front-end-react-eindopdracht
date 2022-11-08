@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import styles from './Topmenu.module.css'
-
+import './fonts.css'
 // Topmenu component
 
 function Topmenu () {

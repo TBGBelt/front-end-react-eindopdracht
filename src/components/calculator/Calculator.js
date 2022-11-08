@@ -9,7 +9,7 @@ const apiKey = "58ec23312b4a3e36553f8c0dafcbd892";
 const apiID = "931dac1a";
 
 function Calculator() {
-    const [input, setInput] = useState('')
+    const [input, setInput] = useState('');
     const [ingredient, setIngredient] = useState([]);
 
     function onFormSubmit(e) {
@@ -34,7 +34,7 @@ function Calculator() {
             console.log(foundIngredient);
             // console.log(result.data.hints[0]);
             setIngredient(result.data.hints[0]);
-            console.log(ingredient);
+            console.log(input);
 
         } catch (e) {
             console.error(e);
@@ -62,18 +62,16 @@ function Calculator() {
             </form>
             {/*<div>*/}
             {/*    {ingredient.map((result) => (*/}
-                    <Calculatorresult
-                        // key={setIngredient}
-                        // ingredientName={result.data.hints[0].food.label}
-                        // portionSize={result.data.hints[0].measures[0].weight}
-                        label="gram"
-                    />
+            {/*        <Calculatorresult*/}
+            {/*            key={setIngredient}*/}
+            {/*            ingredientName={result.data.hints[0].food.label}*/}
+            {/*            portionSize={result.data.hints[0].measures[0].weight}*/}
+            {/*            label="gram"*/}
+            {/*        />*/}
             {/*    ))}*/}
             {/*</div>*/}
         </div>
     );
-
-
 }
 
 export default Calculator;
