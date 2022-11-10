@@ -2,7 +2,6 @@ import React from "react";
 import {useState} from "react";
 import axios from "axios";
 import styles from './Searchbar.module.css'
-// import { ReactComponent as Time } from ".src/assets/icons/time.svg";
 import Recipecard from "../recipecard/Recipecard";
 import Button from "../button/Button";
 import Inputfield from "../inputfield/Inputfield";
@@ -71,7 +70,7 @@ function Searchbar() {
                             value={mealtype}
                             onChange={(e) => setMealtype(e.target.value)}
                         >
-                            <option value="" defaultValue={mealtype}>Meal type</option>
+                            <option value="" disabled={mealtype}>Meal type</option>
                             <option value="breakfast">Breakfast</option>
                             <option value="lunch">Lunch</option>
                             <option value="brunch">Brunch</option>
@@ -142,13 +141,14 @@ function Searchbar() {
                     <Recipecard
                         key={recipe.recipe.label}
                         recipeID={recipe.recipe.uri.split("_")[1]}
-                        setRecipesHandler={setRecipes}
+                        // setRecipesHandler={setRecipes}
                         picture={recipe.recipe.image}
                         recipeName={recipe.recipe.label}
                         ingredients={recipe.recipe.ingredients.length}
                         calories={Math.round(recipe.recipe.calories)}
                         time={recipe.recipe.totalTime}
-                    />))}
+                    />
+                ))}
             </div>
         </div>
     )

@@ -29,12 +29,12 @@ function Calculator() {
                 }
             })
             console.log(result.data);
+            console.log(result.data.hints);
 
             const foundIngredient = result.data.hints[0];
             console.log(foundIngredient);
-            // console.log(result.data.hints[0]);
-            setIngredient(result.data.hints[0]);
-            console.log(input);
+            setIngredient(result.data.hints);
+            console.log(ingredient);
 
         } catch (e) {
             console.error(e);
@@ -60,16 +60,16 @@ function Calculator() {
                 />
 
             </form>
-            {/*<div>*/}
-            {/*    {ingredient.map((result) => (*/}
-            {/*        <Calculatorresult*/}
-            {/*            key={setIngredient}*/}
-            {/*            ingredientName={result.data.hints[0].food.label}*/}
-            {/*            portionSize={result.data.hints[0].measures[0].weight}*/}
-            {/*            label="gram"*/}
-            {/*        />*/}
-            {/*    ))}*/}
-            {/*</div>*/}
+            <div>
+                {Object.keys(ingredient).length > 0 && ingredient.map((result) => (
+                    <Calculatorresult
+                        key={result.food.foodId}
+                        ingredientName={result.food.label}
+                        portionSize={result.measures[0].weight}
+                        label="gram"
+                    />
+                ))}
+            </div>
         </div>
     );
 }

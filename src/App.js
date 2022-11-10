@@ -1,6 +1,6 @@
 import './App.css';
 import {
-    BrowserRouter as Router,
+
     Switch,
     Route,
 } from 'react-router-dom';
@@ -10,6 +10,7 @@ import Searchbar from "./components/searchbar/Searchbar";
 import Homepage from "./pages/homepage/Homepage";
 import Calculator from "./components/calculator/Calculator";
 import Recipepage from "./pages/recipe/Recipepage";
+import styles from "./pages/recipe/Recipepage.module.css";
 
 
 
@@ -19,7 +20,8 @@ function App() {
 
 
     return (
-        <Router>
+        <>
+            <div className={styles["outer-container"]}>
             <Topmenu/>
 
             <Switch>
@@ -34,7 +36,8 @@ function App() {
                 </Route>
             </Switch>
             <Footer/>
-        </Router>
+            </div>
+        </>
     )
         ;
 }

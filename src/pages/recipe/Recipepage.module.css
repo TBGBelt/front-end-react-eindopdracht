@@ -1,0 +1,86 @@
+.recipe-page-main__outer-container {
+    border: 1px solid hotpink;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    align-self: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.recipe-page-main__recipe-description {
+    width: 70%;
+    padding-right: 15%;
+    margin-bottom: 20px;
+}
+
+.recipe-description__title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #283E53;
+}
+
+.recipe-description__title img {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    margin-right: 6px;
+}
+
+/*.recipe-page-main__image {*/
+/*    width: 10%;*/
+/*}*/
+
+.recipe-page-main__ingredients {
+    width: 70%;
+}
+
+.recipe-page-main-ingredients__ingredient-list {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+.recipe-page-main-ingredients__ingredient-list li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.recipe-page-main__nutrients {
+    width: 30%;
+
+}
+
+.recipe-nutrients-items__row-1 {
+    padding-right: 170px;
+    padding-top: 10px;
+}
+
+.recipe-nutrients-items__row-2 {
+    padding-right: 15px;
+    text-align: right;
+}
+
+.recipe-page-main__health-labels {
+    width: 100%;
+}
+
+.recipe-page-health-labels__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.recipe-page__health-label-item {
+    background-color: #71B6BE;
+    padding: 6px 8px 6px 8px;
+    border-radius: 20px;
+    border: 1px solid #283E53;
+}

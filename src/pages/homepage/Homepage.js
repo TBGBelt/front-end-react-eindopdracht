@@ -53,7 +53,7 @@ function Homepage() {
                     </div>
                 </div>
             </div>
-            <Searchbar></Searchbar>
+            <Searchbar/>
         </div>
     );
 }

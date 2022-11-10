@@ -9,7 +9,7 @@ function Recipecard({picture, recipeName, ingredients, calories, time, recipeID}
     return (
         <div className={styles["recipe-card__outer-container"]}>
             <div className={styles["recipe-card"]}>
-                <NavLink to={`/recipe/:${recipeID}`} activeClassName={styles["recipe-link"]}>
+                <NavLink to={`/recipe/${recipeID}`} activeClassName={styles["recipe-link"]}>
                     <img src={picture} alt="recipe-picture"/>
                     <div className={styles["recipe-card__title"]}>
                         <h5>{recipeName}</h5>
