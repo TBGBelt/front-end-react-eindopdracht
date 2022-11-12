@@ -32,13 +32,13 @@ function Recipepage() {
 
 
                 const fetchedRecipe = result.data.recipe;
-                const fetchedIngredient = result.data.recipe.ingredientLines;
+                const fetchedIngredient = result.data.recipe.ingredients;
                 const fetchedHealthlabels = result.data.recipe.healthLabels;
                 console.log(fetchedHealthlabels);
                 console.log(fetchedIngredient)
                 console.log(fetchedRecipe);
                 setRecipe(result.data);
-                setIngredients(result.data.recipe.ingredientLines);
+                setIngredients(result.data.recipe.ingredients);
                 setHealthlabels(result.data.recipe.healthLabels);
 
             } catch (e) {
@@ -60,7 +60,11 @@ function Recipepage() {
                             <div className={styles["recipe-description__title"]}>
                                 <h1>{recipe.recipe.label}</h1>
                                 <p><img src={Time} alt="clock"/> {recipe.recipe.totalTime} min</p>
+
                             </div>
+                            <img className={styles["recipe-page-main__image"]} src={recipe.recipe.image}
+                                 alt="recipe image"/>
+
                             <p className={styles["recipe-page-main__recipe-description"]}>Lorem ipsum dolor sit amet,
                                 consectetur adipisicing elit. Aperiam autem eum facere, harum non
                                 omnis
@@ -90,14 +94,12 @@ function Recipepage() {
                                 Consectetur eum explicabo hic illo molestias mollitia, quidem quisquam quos tempore ut?
                             </p>
 
-                            <img className={styles["recipe-page-main__image"]} src={recipe.recipe.image}
-                                 alt="recipe image"/>
 
                             <div className={styles["recipe-page-main__ingredients"]}>
                                 <h5>ingredient list</h5>
-                                {Object.keys(ingredients).length > 0 && ingredients.map((recipe) => (
+                                {ingredients.map((ingredients) => (
                                     <ul className={styles["recipe-page-main-ingredients__ingredient-list"]}>
-                                        <li>{recipe.ingredientLines} ingredient</li>
+                                        <li>{ingredients.text}</li>
                                     </ul>
                                 ))}
                             </div>
@@ -139,12 +141,13 @@ function Recipepage() {
                             </div>
 
                             <h5>health labels</h5>
-                            {Object.keys(healthlabels).length > 0 && healthlabels.map((recipe) => (
+                            <div>
+                            {healthlabels.map((healthlabels) => (
                                 <Button
-                                    buttonText={`labels ${recipe.healthLabels}`}
+                                    buttonText={healthlabels.healthLabels}
                                 />
                             ))}
-
+                            </div>
 
                         </div>
                     }
