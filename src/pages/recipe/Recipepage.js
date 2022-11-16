@@ -13,7 +13,7 @@ function Recipepage() {
     const {recipeID} = useParams();
     const [recipe, setRecipe] = useState({});
     const [ingredients, setIngredients] = useState([]);
-    const [healthlabels, setHealthlabels] = useState([]);
+    const [healthlabels, setHealthlabels] = useState('');
 
 
     useEffect(() => {
@@ -40,7 +40,6 @@ function Recipepage() {
                 setRecipe(result.data);
                 setIngredients(result.data.recipe.ingredients);
                 setHealthlabels(result.data.recipe.healthLabels);
-
             } catch (e) {
                 console.error(e);
             }
@@ -142,9 +141,10 @@ function Recipepage() {
 
                             <h5>health labels</h5>
                             <div>
-                            {healthlabels.map((healthlabels) => (
+                            {Object.keys(healthlabels).length > 0 && healthlabels.map((healthLabels) => (
                                 <Button
-                                    buttonText={healthlabels.healthLabels}
+                                    // key={}
+                                    buttonText={healthLabels}
                                 />
                             ))}
                             </div>
