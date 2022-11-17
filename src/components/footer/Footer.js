@@ -10,7 +10,7 @@ import Twitter from "../../assets/icons/twitter.png";
 
 function Footer() {
     return (
-        <div className={styles['outer-container']}>
+        <>
         <div className={styles["footer__outer-container"]}>
             <div className={styles["footer__inner-container"]}>
                 <section className={styles["footer__card"]}>
@@ -67,7 +67,7 @@ function Footer() {
                 </section>
             </div>
         </div>
-        </div>
+        </>
     );
 }
 

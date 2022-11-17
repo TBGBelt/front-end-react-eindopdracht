@@ -1,16 +1,16 @@
-.recipe-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 45%;
-    position: relative;
-    text-decoration: none;
-    padding: 10px 10px 10px 10px;
-    background-color: #eeeeee;
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 5px 10px -5px #C0C0C0;
-    border-radius: 0 0 5px 5px;
-}
+/*.recipe-card {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    width: 60%;*/
+/*    position: relative;*/
+/*    text-decoration: none;*/
+/*    padding: 10px 10px 10px 10px;*/
+/*    background-color: #eeeeee;*/
+/*    border: 1px solid #e1e1e1;*/
+/*    box-shadow: 0 5px 10px -5px #C0C0C0;*/
+/*    border-radius: 0 0 5px 5px;*/
+/*}*/
 
 .recipe-card:hover {
     box-shadow: 0 20px 25px -10px #C0C0C0;
@@ -21,12 +21,12 @@
     color: black;
 }
 
-/*.recipe-image {*/
-/*    height: 150px;*/
-/*    width: 150px;*/
-/*    object-fit: cover;*/
-/*    border-radius: 3px 3px 0 0;*/
-/*}*/
+.recipe-image {
+    /*height: 300px;*/
+    width: 350px;
+    object-fit: cover;
+    border-radius: 3px 3px 0 0;
+}
 
 .recipe-card:nth-of-type(2) {
     width: 45%;

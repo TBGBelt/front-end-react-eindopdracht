@@ -7,8 +7,8 @@ import Button from "../button/Button";
 import Inputfield from "../inputfield/Inputfield";
 import Singleselect from "../singleselect/Singleselect";
 
-const apiKey = "90f73244f33dbc5fc80f218800eedde6";
-const apiId = "c804ae75";
+const apiKey = process.env.REACT_APP_RECIPE_KEY;
+const apiId = process.env.REACT_APP_RECIPE_ID;
 
 function Searchbar() {
     const [input, setInput] = useState('');
@@ -54,7 +54,7 @@ function Searchbar() {
 
 
     return (
-        <div>
+        <>
             <div className={styles['searchbar__outer-container']}>
                 <div className={styles["searchbar__inner-container"]}>
                     <form className={styles.searchbar} onSubmit={onFormSubmit}>
@@ -150,7 +150,7 @@ function Searchbar() {
                     />
                 ))}
             </div>
-        </div>
+        </>
     )
         ;
 }

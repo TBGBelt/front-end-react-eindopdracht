@@ -11,7 +11,7 @@ import Searchbar from "../../components/searchbar/Searchbar";
 function Homepage() {
 
     return (
-        <div className={styles["outer-container"]}>
+        <>
             <div className={styles["hero__outer-container"]}>
                 <div className={styles["hero__inner-container"]}>
                     <h1 className={styles["homepage-title"]}>delicious recipes</h1>
@@ -53,8 +53,10 @@ function Homepage() {
                     </div>
                 </div>
             </div>
-            <Searchbar/>
-        </div>
+            <div>
+                <Searchbar/>
+            </div>
+        </>
     );
 }
 

@@ -1,13 +1,12 @@
-import React, {useEffect} from "react";
-import {useState} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import Button from "../button/Button";
 import Inputfield from "../inputfield/Inputfield";
 import Calculatorresult from "./Calculatorresult";
 import Calorieoverview from "./Calorieoverview";
 
-const apiKey = "58ec23312b4a3e36553f8c0dafcbd892";
-const apiID = "931dac1a";
+const apiKey = process.env.REACT_APP_INGREDIENT_KEY;
+const apiID = process.env.REACT_APP_INGREDIENT_ID;
 
 function Calculator() {
     const [input, setInput] = useState('');
@@ -23,6 +22,7 @@ function Calculator() {
     function onFormSubmit(e) {
         e.preventDefault();
         fetchIngredient(input);
+
     }
 
 
@@ -41,8 +41,7 @@ function Calculator() {
             const foundIngredient = result.data.hints[0];
             console.log(foundIngredient);
             setIngredient([...ingredient, result.data.hints[0]]);
-            console.log(ingredient);
-            console.log(amount)
+
 
         } catch (e) {
             console.error(e);

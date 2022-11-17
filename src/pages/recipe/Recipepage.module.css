@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: center;
     width: 80%;
+    align-content: center;
     align-self: center;
     margin-top: 60px;
     flex-wrap: wrap;
@@ -30,9 +31,9 @@
     margin-right: 6px;
 }
 
-/*.recipe-page-main__image {*/
-/*    width: 10%;*/
-/*}*/
+.recipe-page-main__image {
+    height: 30%;
+}
 
 .recipe-page-main__ingredients {
     width: 70%;
@@ -73,7 +74,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 8px;
-    width: 50%;
+    /*width: 50%;*/
     margin-top: 10px;
     margin-bottom: 20px;
 }

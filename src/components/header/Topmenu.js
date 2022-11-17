@@ -6,7 +6,7 @@ import './fonts.css'
 
 function Topmenu () {
     return (
-        <div className={styles["topmenu__outer-container"]}>
+        <>
             <div className={styles["topmenu__inner-container"]}>
                 <h3>
                     <NavLink to="/" exact activeClassName={styles["homepage-logo"]}>The Clueless Cook</NavLink>
@@ -23,7 +23,7 @@ function Topmenu () {
                     </li>
                 </ul>
             </div>
-        </div>
+        </>
     );
 }
 export default Topmenu;

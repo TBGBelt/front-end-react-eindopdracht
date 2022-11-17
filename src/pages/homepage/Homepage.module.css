@@ -9,7 +9,7 @@
 
 
 .hero__outer-container {
-    /*border: 1px solid hotpink;*/
+    border: 1px solid hotpink;
     background-image: url("../../assets/images/hero-image.jpg");
     background-size: cover;
     flex-basis: 600px;
@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 30px;
 }
 
 .hero__inner-container {

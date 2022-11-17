@@ -8,11 +8,11 @@ function Herorecipe ({recipeName, ingredients, calories, time, recipeID}) {
 
 
     return (
-        <div className={styles["recipe-card__outer-container"]}>
+
             <div className={styles["recipe-card"]}>
                 <NavLink to={`/recipe/:${recipeID}`} activeClassName={styles["recipe-link"]}>
-                    <img src={recipeImage} alt="recipe-picture" className={styles["recipe-image"]}/>
                     <div className={styles["recipe-card__title"]}>
+                    <img src={recipeImage} alt="recipe-picture" className={styles["recipe-image"]}/>
                         <h5>{recipeName}</h5>
                         <p className={styles["recipe-card__ingredients-calories"]}>{ingredients} ingredients
                             | {calories} calories</p>
@@ -21,7 +21,7 @@ function Herorecipe ({recipeName, ingredients, calories, time, recipeID}) {
                 </NavLink>
             </div>
 
-        </div>
+
     );
 }
 
