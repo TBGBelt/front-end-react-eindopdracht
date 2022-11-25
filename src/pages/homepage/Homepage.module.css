@@ -9,7 +9,7 @@
 
 
 .hero__outer-container {
-    border: 1px solid hotpink;
+    /*border: 1px solid hotpink;*/
     background-image: url("../../assets/images/hero-image.jpg");
     background-size: cover;
     flex-basis: 600px;
@@ -44,7 +44,7 @@
 }
 
 .header__feature-recipes {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     display: flex;
     flex-direction: row;
     justify-content: center;

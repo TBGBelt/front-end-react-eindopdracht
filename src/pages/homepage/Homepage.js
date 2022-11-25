@@ -3,6 +3,7 @@ import styles from './Homepage.module.css';
 import Button from "../../components/button/Button";
 import Herorecipe from "../../components/recipecard/Herorecipe";
 import Searchbar from "../../components/searchbar/Searchbar";
+
 // import recipeImage from "../../assets/images/recipe1.jpg"
 
 
@@ -23,7 +24,7 @@ function Homepage() {
 
                 <div className={styles["header__feature-recipes"]}>
                     <div className={styles["feature-recipes"]}>
-                        <div className={styles["feature-recipes__card"]}>
+                        {/*<div className={styles["feature-recipes__card"]}>*/}
                             <Herorecipe
                                 // picture={recipeImage}
                                 recipeName="feature recipes"
@@ -31,8 +32,8 @@ function Homepage() {
                                 calories="260"
                                 time="10"
                             />
-                        </div>
-                        <div className={styles["feature-recipes__card"]}>
+                        {/*</div>*/}
+                        {/*<div className={styles["feature-recipes__card"]}>*/}
                             <Herorecipe
                                 // picture={recipeImage}
                                 recipeName="feature recipes"
@@ -40,8 +41,8 @@ function Homepage() {
                                 calories="260"
                                 time="10"
                             />
-                        </div>
-                        <div className={styles["feature-recipes__card"]}>
+                        {/*</div>*/}
+                        {/*<div className={styles["feature-recipes__card"]}>*/}
                             <Herorecipe
                                 // picture={recipeImage}
                                 recipeName="feature recipes"
@@ -49,13 +50,12 @@ function Homepage() {
                                 calories="260"
                                 time="10"
                             />
-                        </div>
+                        {/*</div>*/}
                     </div>
                 </div>
             </div>
-            <div>
                 <Searchbar/>
-            </div>
+
         </>
     );
 }

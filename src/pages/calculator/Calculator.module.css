@@ -1,0 +1,30 @@
+.calculator__outer-container {
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    align-self: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.calculator__main-title,
+.calculator__search,
+.calculator__product-info,
+.servingAmount,
+.calculator-result-info__table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.calculator__main-title h1 {
+    color: #283E53;
+}
+
+.product-result-info th,
+.calculator-result-info th {
+    padding-right: 40px;
+    padding-bottom: 10px;
+    text-align: end;
+}

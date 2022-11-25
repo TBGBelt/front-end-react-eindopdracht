@@ -51,7 +51,10 @@
 
 .recipe-card__time {
     display: flex;
+}
 
+.recipe-card__time img {
+    margin-left: 5px;
 }
 
 

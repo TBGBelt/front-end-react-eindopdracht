@@ -46,7 +46,6 @@ function Searchbar() {
             setRecipes(result.data.hits.slice(0, 15));
             console.log(resultAmount);
             console.log(recipes);
-
         } catch (e) {
             console.error(e)
         }
@@ -55,7 +54,7 @@ function Searchbar() {
 
     return (
         <>
-            <div className={styles['searchbar__outer-container']}>
+            <div className={styles["searchbar__outer-container"]}>
                 <div className={styles["searchbar__inner-container"]}>
                     <form className={styles.searchbar} onSubmit={onFormSubmit}>
 

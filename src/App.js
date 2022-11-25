@@ -6,7 +6,7 @@ import {
 import Topmenu from './components/header/Topmenu';
 import Footer from "./components/footer/Footer";
 import Homepage from "./pages/homepage/Homepage";
-import Calculator from "./components/calculator/Calculator";
+import Calculator from "./pages/calculator/Calculator";
 import Recipepage from "./pages/recipe/Recipepage";
 
 

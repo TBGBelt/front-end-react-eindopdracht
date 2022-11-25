@@ -22,11 +22,20 @@
     width: 100%;
     margin-bottom: 20px;
     color: #283E53;
+    /*text-transform: capitalize;*/
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.recipe-description__title h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-left: 50px;
 }
 
 .recipe-description__title img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-left: 20px;
     margin-right: 6px;
 }
@@ -36,7 +45,7 @@
 }
 
 .recipe-page-main__ingredients {
-    width: 70%;
+    width: 62%;
 }
 
 .recipe-page-main-ingredients__ingredient-list {
@@ -65,16 +74,17 @@
 }
 
 .recipe-page-main__health-labels {
-    width: 100%;
+    width: 90%;
 }
 
 .recipe-page-health-labels__buttons {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: start;
     flex-wrap: wrap;
     gap: 8px;
-    /*width: 50%;*/
+    width: 80%;
     margin-top: 10px;
     margin-bottom: 20px;
 }

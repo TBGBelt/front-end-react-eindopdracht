@@ -1,11 +1,12 @@
 import React from "react";
+import styles from "./Calculatorresult.module.css"
 
 function Calculatorresult({ingredientName, portionSize, label}) {
 
     return (
-        <div className='calculator-result__outer-container'>
+        <>
             <table className='calculator-result'>
-                <tbody className='calculator-result-data'>
+                <tbody className={styles['calculator-search-result']}>
                 <tr>
                     <td>{ingredientName}</td>
                     <td>{portionSize}</td>
@@ -13,7 +14,7 @@ function Calculatorresult({ingredientName, portionSize, label}) {
                 </tr>
                 </tbody>
             </table>
-        </div>
+        </>
     )
         ;
 

@@ -1,11 +1,12 @@
 import React from "react";
+import styles from "./Calorieoverview.module.css"
 
 function Calorieoverview({ingredientName, calories, fat, carbs}) {
 
     return (
-        <div className='calculator-result__outer-container'>
+        <>
             <table className='calculator-result'>
-                <tbody className='calculator-result-data'>
+                <tbody className={styles['calculator-result-data']}>
                 <tr>
                     <td>{ingredientName}</td>
                     <td>{calories}</td>
@@ -14,7 +15,7 @@ function Calorieoverview({ingredientName, calories, fat, carbs}) {
                 </tr>
                 </tbody>
             </table>
-        </div>
+        </>
     )
         ;
 

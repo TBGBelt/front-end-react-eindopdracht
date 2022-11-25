@@ -1,18 +1,18 @@
 .searchbar__outer-container {
-    border: 1px solid hotpink;
+    /*border: 1px solid hotpink;*/
     width: 100%;
     background-color: var(--color1);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    /*gap: 2em;*/
     padding: 10px 10px 10px 10px;
-    /*margin-top: 80px;*/
+    margin-top: 60px;
 }
 
 .searchbar__inner-container {
-    border: 1px solid red;
-    /*width: 80%;*/
+    /*border: 1px solid red;*/
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: center;
