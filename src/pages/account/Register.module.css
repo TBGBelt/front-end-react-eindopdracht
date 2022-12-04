@@ -1,0 +1,19 @@
+.registration__outer-container {
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    align-self: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.registration__title h1 {
+    color: #283E53;
+}
+
+.registration__information {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}

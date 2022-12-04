@@ -1,0 +1,19 @@
+.login__outer-container {
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    align-self: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.login__title h1 {
+    color: #283E53;
+}
+
+.login__information {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}

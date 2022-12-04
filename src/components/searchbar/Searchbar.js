@@ -140,7 +140,6 @@ function Searchbar() {
                     <Recipecard
                         key={recipe.recipe.label}
                         recipeID={recipe.recipe.uri.split("_")[1]}
-                        // setRecipesHandler={setRecipes}
                         picture={recipe.recipe.image}
                         recipeName={recipe.recipe.label}
                         ingredients={recipe.recipe.ingredients.length}
