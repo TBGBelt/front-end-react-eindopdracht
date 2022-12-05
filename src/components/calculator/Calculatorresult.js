@@ -15,9 +15,7 @@ function Calculatorresult({ingredientName, portionSize, label}) {
                 </tbody>
             </table>
         </>
-    )
-        ;
-
+    );
 }
 
 export default Calculatorresult;

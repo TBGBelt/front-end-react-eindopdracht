@@ -2,8 +2,10 @@ import {createContext, useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
 
+//create context
 export const AuthContext = createContext(null)
 
+//context provider function + useState
 function AuthContextProvider({children}) {
     const history = useHistory();
     const [authState, setAuthState] = useState({
@@ -11,6 +13,7 @@ function AuthContextProvider({children}) {
         status: 'pending',
     })
 
+    //check for token in localstorage
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token){
@@ -24,6 +27,7 @@ function AuthContextProvider({children}) {
         }
     }, [])
 
+    //fetching user data from API
     async function fetchUserData(token) {
         try {
             const response = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user`, {
@@ -48,6 +52,7 @@ function AuthContextProvider({children}) {
         }
     }
 
+    //login function
     function login(data) {
         localStorage.setItem('token', data.accessToken);
         setAuthState({
@@ -63,7 +68,7 @@ function AuthContextProvider({children}) {
         })
         history.push('/')
     }
-
+//logout function
     function logout(){
         localStorage.clear()
         setAuthState({

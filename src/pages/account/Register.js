@@ -5,6 +5,7 @@ import Inputfield from "../../components/inputfield/Inputfield";
 import Button from "../../components/button/Button";
 import styles from "./Register.module.css"
 
+//Initializing useStates
 function Register() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -14,6 +15,7 @@ function Register() {
     const [errorText, setErrorText] = useState('');
     const [registrationText, setRegistrationText] = useState('');
 
+    //API post function
     async function userRegistration() {
         toggleSucces(false);
         toggleError(false);
@@ -36,6 +38,7 @@ function Register() {
         }
     }
 
+// user registration function with if/else statements for registration form
     function onRegisterSubmit(e) {
         e.preventDefault()
         toggleSucces(false);
@@ -51,6 +54,7 @@ function Register() {
 
     return (
         <>
+            {/*main information and succes/error messages*/}
             <div className={styles["registration__outer-container"]}>
                 <div className={styles["registration__title"]}>
                     <h1>registration</h1>
@@ -70,6 +74,7 @@ function Register() {
                     </span>
                 }
 
+                {/*registration form*/}
                 <form onSubmit={onRegisterSubmit}>
                     email
                     <Inputfield
@@ -104,12 +109,13 @@ function Register() {
                     />
                 </form>
                 <div className={styles["registration__information"]}>
-                <p>
-                    Already have an account? Click <Link to="/inloggen">here to login</Link>
-                </p></div>
+                    <p>
+                        Already have an account? Click <Link to="/inloggen">here to login</Link>
+                    </p>
+                </div>
             </div>
         </>
-    )
+    );
 }
 
 export default Register;

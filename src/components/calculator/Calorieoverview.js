@@ -6,8 +6,8 @@ function Calorieoverview({ingredientName, calories, fat, carbs}) {
     return (
         <>
             <table className='calculator-result'>
-                <tbody className={styles['calculator-result-data']}>
-                <tr>
+                <tbody>
+                <tr className={styles['calculator-result-data']}>
                     <td>{ingredientName}</td>
                     <td>{calories}</td>
                     <td>{fat}</td>
@@ -16,9 +16,7 @@ function Calorieoverview({ingredientName, calories, fat, carbs}) {
                 </tbody>
             </table>
         </>
-    )
-        ;
-
+    );
 }
 
 export default Calorieoverview;

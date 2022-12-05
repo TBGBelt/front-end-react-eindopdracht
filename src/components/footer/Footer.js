@@ -6,8 +6,6 @@ import LinkedIn from "../../assets/icons/linkedin.png";
 import Twitter from "../../assets/icons/twitter.png";
 
 
-// Header component
-
 function Footer() {
     return (
         <>
@@ -31,13 +29,13 @@ function Footer() {
                     <h4 className={styles["footer__card-title"]}>about</h4>
                     <ul className={styles["footer-card__list"]}>
                         <li>
-                            <NavLink to="/" exact activeClassName={styles["footer-list"]}>lorem ipsum</NavLink>
+                            <NavLink to="/" exact activeClassName={styles["footer-list"]}>Thomas Belt</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/" exact activeClassName={styles["footer-list"]}>lorem ipsum</NavLink>
+                            <NavLink to="/" exact activeClassName={styles["footer-list"]}>Hogeschool NOVI</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/" exact activeClassName={styles["footer-list"]}>lorem ipsum</NavLink>
+                            <NavLink to="/" exact activeClassName={styles["footer-list"]}>2022</NavLink>
                         </li>
                     </ul>
                 </section>

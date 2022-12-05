@@ -1,5 +1,4 @@
 .registration__outer-container {
-    /*border: 1px solid red;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +9,7 @@
 }
 
 .registration__title h1 {
-    color: #283E53;
+    color: var(--color1);
 }
 
 .registration__information {

@@ -1,20 +1,5 @@
-/*.recipe-card {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    width: 100%;*/
-/*    position: relative;*/
-/*    text-decoration: none;*/
-/*    padding: 10px 10px 10px 10px;*/
-/*    background-color: #eeeeee;*/
-/*    border: 1px solid #e1e1e1;*/
-/*    box-shadow: 0 5px 10px -5px #C0C0C0;*/
-/*    border-radius: 0 0 5px 5px;*/
-/*}*/
-
-
 .recipe-card:hover {
-    box-shadow: 0 20px 25px -10px #C0C0C0;
+    box-shadow: 0 20px 25px -10px var(--color5);
 }
 
 .recipe-link {
@@ -30,9 +15,9 @@
 
 .recipe-card__title{
     padding: 10px 10px 10px 10px;
-    background-color: #eeeeee;
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 5px 10px -5px #C0C0C0;
+    background-color: var(--color4);
+    border: 1px solid var(--color6);
+    box-shadow: 0 5px 10px -5px var(--color5);
     border-radius: 0 0 5px 5px;
     text-decoration: none;
     color: black;

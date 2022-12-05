@@ -5,10 +5,11 @@ import Time from "../../assets/icons/time.svg";
 import Healthlabelbutton from "../../components/button/Healthlabelbutton";
 import styles from './Recipepage.module.css'
 
-
+//declaring variables for API ID and KEY
 const apiKey = process.env.REACT_APP_RECIPE_KEY;
 const apiId = process.env.REACT_APP_RECIPE_ID;
 
+//Initializing useStates
 function Recipepage() {
     const {recipeID} = useParams();
     const [recipe, setRecipe] = useState({});
@@ -16,6 +17,7 @@ function Recipepage() {
     const [healthlabels, setHealthlabels] = useState('');
 
 
+    //API request function
     useEffect(() => {
 
 
@@ -30,13 +32,6 @@ function Recipepage() {
                     }
                 })
 
-
-                const fetchedRecipe = result.data.recipe;
-                const fetchedIngredient = result.data.recipe.ingredients;
-                const fetchedHealthlabels = result.data.recipe.healthLabels;
-                console.log(fetchedHealthlabels);
-                console.log(fetchedIngredient)
-                console.log(fetchedRecipe);
                 setRecipe(result.data);
                 setIngredients(result.data.recipe.ingredients);
                 setHealthlabels(result.data.recipe.healthLabels);
@@ -52,6 +47,7 @@ function Recipepage() {
 
     return (
         <>
+            {/*recipe title and cooking time*/}
 
             {Object.keys(recipe).length > 0 &&
                 <div className={styles["recipe-page-main__outer-container"]}>
@@ -60,6 +56,9 @@ function Recipepage() {
                         <p><img src={Time} alt="clock"/> {recipe.recipe.totalTime} min</p>
 
                     </div>
+
+                    {/*placeholder of actual recipe and recipe picture, API does not provide actual recipe*/}
+
                     <div className={styles["recipe-page-main__recipe-description"]}>
                         <p>Lorem ipsum dolor sit amet,
                             consectetur adipisicing elit. Aperiam autem eum facere, harum non
@@ -93,6 +92,8 @@ function Recipepage() {
 
                     <img className={styles["recipe-page-main__image"]} src={recipe.recipe.image}
                          alt="recipe image"/>
+
+                    {/*recipe ingredients, nutrients and health labels*/}
 
                     <div className={styles["recipe-page-main__ingredients"]}>
                         <h5>ingredient list</h5>
@@ -143,7 +144,6 @@ function Recipepage() {
                     <div className={styles["recipe-page-health-labels__buttons"]}>
                         {Object.keys(healthlabels).length > 0 && healthlabels.map((healthLabels) => (
                             <Healthlabelbutton
-                                // key={}
                                 buttonText={healthLabels}
                             />
                         ))}

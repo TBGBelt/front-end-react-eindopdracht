@@ -6,12 +6,14 @@ import Button from "../../components/button/Button";
 import {AuthContext} from "../../context/AuthContext";
 import styles from "./Login.module.css"
 
+//Initializing useStates
 function Login() {
     const {login} = useContext(AuthContext);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, toggleError] = useState(false);
 
+    //API post function
     async function postUserLogin() {
         toggleError(false);
         try {
@@ -27,7 +29,7 @@ function Login() {
             toggleError(true);
         }
     }
-
+// user login function for login form
     function onLoginSubmit(e) {
         e.preventDefault()
         toggleError(false);
@@ -36,6 +38,7 @@ function Login() {
 
     return (
         <>
+            {/*main information and succes/error messages*/}
             <div className={styles["login__outer-container"]}>
                 <div className={styles["login__title"]}>
                 <h1>login</h1>
@@ -45,6 +48,7 @@ function Login() {
                 </div>
                 {error && <p>incorrect username and/or password, please try again.</p>}
 
+                {/*login form*/}
                 <form onSubmit={onLoginSubmit}>
                     username
                     <Inputfield

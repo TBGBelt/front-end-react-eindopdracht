@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import Button from "../../components/button/Button";
 import Inputfield from "../../components/inputfield/Inputfield";
@@ -7,9 +7,11 @@ import Calorieoverview from "../../components/calculator/Calorieoverview";
 import Calorietotal from "../../components/calculator/Calorietotal";
 import styles from './Calculator.module.css'
 
+//declaring variables for API ID and KEY
 const apiKey = process.env.REACT_APP_INGREDIENT_KEY;
 const apiID = process.env.REACT_APP_INGREDIENT_ID;
 
+//Initializing useStates
 function Calculator() {
     const [input, setInput] = useState('');
     const [amount, setAmount] = useState('')
@@ -20,8 +22,7 @@ function Calculator() {
     const [totalFat, setTotalFat] = useState(0);
 
 
-    // useEffect(() => {
-
+//API request function
     async function fetchIngredient(input) {
         try {
             const result = await axios.get("https://api.edamam.com/api/food-database/v2/parser", {
@@ -32,10 +33,7 @@ function Calculator() {
 
                 }
             })
-            console.log(result.data);
-            console.log(result.data.parsed[0].label);
-            const foundIngredient = result.data.hints[0];
-            console.log(foundIngredient);
+
             setIngredient([...ingredient, result.data.hints[0]]);
 
 
@@ -44,14 +42,13 @@ function Calculator() {
         }
     }
 
-    // }, [input]);
-
+    //ingredient search function
     function onFormSubmit(e) {
         e.preventDefault();
         fetchIngredient(input);
     }
 
-
+// adding servings function + calculating totals
     function onAmountSubmit(e) {
         e.preventDefault();
         setCalculator([...calculator, [ingredient, amount]]);
@@ -78,6 +75,9 @@ function Calculator() {
                 <div className={styles["calculator__main-title"]}>
                     <h1>Food calculator</h1>
                 </div>
+
+                {/*ingredient search form*/}
+
                 <div className={styles["calculator__search"]}>
                     <form className="ingredientSearch" onSubmit={onFormSubmit}>
 
@@ -86,15 +86,18 @@ function Calculator() {
                             name="find ingredient"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            placeholder="zoek ingredient"
+                            placeholder="Ingredient"
                         />
 
                         <Button type="submit"
-                                buttonText="Zoek ingredient"
+                                buttonText="Find ingredient"
                         />
 
                     </form>
                 </div>
+
+                {/*search result for ingredient*/}
+
                 <div className={styles["calculator__product-info"]}>
                     <table>
                         <thead className={styles["product-result-info"]}>
@@ -114,6 +117,9 @@ function Calculator() {
                         />
                     ))}
                 </div>
+
+                {/*servings form for selected ingredient*/}
+
                 <div className={styles["servingAmount"]}>
                     <form onSubmit={onAmountSubmit}>
 
@@ -131,6 +137,9 @@ function Calculator() {
                         />
                     </form>
                 </div>
+
+                {/*result table with information per ingredient and total*/}
+
                 <div className={styles["calculator-result-info__table"]}>
                     <table>
                         <thead className={styles["calculator-result-info"]}>

@@ -1,5 +1,4 @@
 .calculator__outer-container {
-    /*border: 1px solid red;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,7 +18,7 @@
 }
 
 .calculator__main-title h1 {
-    color: #283E53;
+    color: var(--color1);
 }
 
 .product-result-info th,

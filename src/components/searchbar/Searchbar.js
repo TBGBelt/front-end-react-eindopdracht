@@ -7,9 +7,11 @@ import Button from "../button/Button";
 import Inputfield from "../inputfield/Inputfield";
 import Singleselect from "../singleselect/Singleselect";
 
+//declaring variables for API ID and KEY
 const apiKey = process.env.REACT_APP_RECIPE_KEY;
 const apiId = process.env.REACT_APP_RECIPE_ID;
 
+//Initializing useStates
 function Searchbar() {
     const [input, setInput] = useState('');
     const [mealtype, setMealtype] = useState("");
@@ -18,13 +20,14 @@ function Searchbar() {
     const [time, setTime] = useState("");
     const [recipes, setRecipes] = useState([]);
 
-
+//function for form submit and fetching recipes
     function onFormSubmit(e) {
         e.preventDefault();
 
         fetchRecipe();
     }
 
+//API request function
     async function fetchRecipe() {
         try {
             const result = await axios.get("https://api.edamam.com/api/recipes/v2", {
@@ -39,13 +42,7 @@ function Searchbar() {
                     time: time ? time : null,
                 }
             })
-            console.log(result.data);
-
-
-            const resultAmount = result.data.hits.slice(0, 15);
             setRecipes(result.data.hits.slice(0, 15));
-            console.log(resultAmount);
-            console.log(recipes);
         } catch (e) {
             console.error(e)
         }
@@ -54,6 +51,8 @@ function Searchbar() {
 
     return (
         <>
+            {/*form with inputfield and single select dropdowns*/}
+
             <div className={styles["searchbar__outer-container"]}>
                 <div className={styles["searchbar__inner-container"]}>
                     <form className={styles.searchbar} onSubmit={onFormSubmit}>
@@ -63,7 +62,7 @@ function Searchbar() {
                             name="search"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            placeholder="zoek een recept"
+                            placeholder="Find a recipe"
                         />
                         <Singleselect
                             value={mealtype}
@@ -120,7 +119,7 @@ function Searchbar() {
                             value={time}
                             onChange={(e) => setTime(e.target.value)}
                         >
-                            <option value="" defaultValue={time}>Time</option>
+                            <option value="" defaultValue={time}>Cooking Time</option>
                             <option value="0-15">0 - 15 min</option>
                             <option value="15-30">15 - 30 min</option>
                             <option value="30-60">30 - 60 min</option>
@@ -128,13 +127,13 @@ function Searchbar() {
                         </Singleselect>
 
                         <Button
-                            buttonText='Zoek recept'
+                            buttonText='Search'
                         />
                     </form>
                 </div>
             </div>
 
-
+            {/*recipe cards displayed from search*/}
             <div className={styles["recipe-results"]}>
                 {recipes.map((recipe) => (
                     <Recipecard
@@ -155,17 +154,3 @@ function Searchbar() {
 
 export default Searchbar;
 
-// <div className="recipe-card__outer-container">
-//     <div className="recipe-card">
-//         {recipes.map((recipe) => (
-//             <div key={recipe.recipe.label}>
-//                 <img src={recipe.recipe.image}/>
-//                 <h3 className="recipe-card__title">{recipe.recipe.label}</h3>
-//                 <p> {recipe.recipe.ingredients.length} ingredients
-//                     | {Math.round(recipe.recipe.calories)} calories</p>
-//                 <p>{recipe.recipe.totalTime} min</p>
-//                 {/*<img src={Time} alt="clock"/>*/}
-//             </div>
-//         ))}
-//     </div>
-// </div>
