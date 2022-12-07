@@ -1,0 +1,54 @@
+.hero__outer-container {
+    background-image: url("../../assets/images/hero-image.jpg");
+    background-size: cover;
+    flex-basis: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.hero__inner-container {
+    min-width: 200px;
+    align-self: center;
+    margin-right: 12%;
+    margin-top: 12%;
+}
+
+.homepage-title {
+    text-transform: capitalize;
+    color: var(--color4);
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.homepage-subtitle {
+    text-transform: capitalize;
+    color: var(--color4);
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.header__feature-recipes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+    align-items: center;
+}
+
+.feature-recipes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+    align-self: center;
+}
+
+
+
+
+
+

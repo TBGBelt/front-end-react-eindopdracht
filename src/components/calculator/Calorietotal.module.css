@@ -1,0 +1,7 @@
+.calculator-result-data-total td {
+    padding-right: 62px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid var(--color1);
+    text-align: end;
+}

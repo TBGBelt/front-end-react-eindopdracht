@@ -1,0 +1,45 @@
+.recipe-card:hover {
+    box-shadow: 0 20px 25px -10px var(--color5);
+}
+
+.recipe-link {
+    text-decoration: none;
+    color: black;
+}
+
+.recipe-picture {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 3px 3px 0 0;
+}
+
+.recipe-card__title{
+    padding: 10px 10px 10px 10px;
+    background-color: var(--color4);
+    border: 1px solid var(--color6);
+    box-shadow: 0 5px 10px -5px var(--color5);
+    border-radius: 0 0 5px 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.recipe-card__title > h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recipe-card__ingredients-calories {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 5px 0;
+}
+
+.recipe-card__time {
+    display: flex;
+}
+
+.recipe-card__time img {
+    margin-left: 5px;
+}
+
+
