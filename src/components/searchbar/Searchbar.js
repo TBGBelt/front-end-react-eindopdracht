@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {useState} from "react";
 import axios from "axios";
 import styles from './Searchbar.module.css'
@@ -7,12 +7,14 @@ import Button from "../button/Button";
 import Inputfield from "../inputfield/Inputfield";
 import Singleselect from "../singleselect/Singleselect";
 
+
 //declaring variables for API ID and KEY
 const apiKey = process.env.REACT_APP_RECIPE_KEY;
 const apiId = process.env.REACT_APP_RECIPE_ID;
 
 //Initializing useStates
 function Searchbar() {
+
     const [input, setInput] = useState('');
     const [mealtype, setMealtype] = useState("");
     const [cuisine, setCuisine] = useState("");

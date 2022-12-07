@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
 import styles from './Homepage.module.css';
 import Button from "../../components/button/Button";
 import Herorecipe from "../../components/recipecard/Herorecipe";
 import Searchbar from "../../components/searchbar/Searchbar";
+import {AuthContext} from "../../context/AuthContext";
+import {Link} from "react-router-dom";
 
 
 //homepage overview
 
 function Homepage() {
-
+    const {authState} = useContext(AuthContext);
     return (
         <>
             {/*main*/}
@@ -52,9 +54,13 @@ function Homepage() {
                     </div>
                 </div>
             </div>
-            {/*searchbar*/}
 
+            {/*{authState === true ?*/}
             <Searchbar/>
+                 {/*:*/}
+                 {/*<div>*/}
+                 {/*   <p>This content is only available for users, please <Link to='/inloggen'>login</Link></p>*/}
+                 {/*</div>}*/}
 
         </>
     );

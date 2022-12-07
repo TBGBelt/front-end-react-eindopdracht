@@ -80,7 +80,7 @@ function AuthContextProvider({children}) {
     }
 
     const contextData = {
-        authState: authState,
+        authState: authState.authorization,
         user: authState.user,
         login: login,
         logout: logout,

@@ -10,6 +10,7 @@ import Calculator from "./pages/calculator/Calculator";
 import Recipepage from "./pages/recipe/Recipepage";
 import Register from "./pages/account/Register";
 import Login from "./pages/account/Login";
+import React from "react";
 
 
 
@@ -30,7 +31,7 @@ function App() {
                 <Route path="/recipe/:recipeID">
                     <Recipepage/>
                 </Route>
-                <Route path="/calculator">
+                <Route path="/calculator" >
                     <Calculator/>
                 </Route>
                 <Route path="/inloggen">

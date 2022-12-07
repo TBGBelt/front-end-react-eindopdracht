@@ -23,7 +23,7 @@ function Login() {
                     password: password,
                 }
             )
-            login(response.data)
+            login(response.data.accessToken)
         } catch (e) {
             console.error(e)
             toggleError(true);
